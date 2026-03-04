@@ -1,9 +1,7 @@
-import { useState, useRef } from 'react';
-import emailjs from '@emailjs/browser';
+import { useState } from 'react';
 import './Contact.css';
 
 function Contact() {
-  const formRef = useRef();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -16,7 +14,7 @@ function Contact() {
     message: false
   });
 
-  const [status, setStatus] = useState('idle'); // idle | sending | success | error
+  const [status, setStatus] = useState('idle');
 
   const handleChange = (e) => {
     setFormData({
@@ -25,26 +23,37 @@ function Contact() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('sending');
 
-    emailjs.sendForm(
-      import.meta.env.VITE_EMAILJS_SERVICE_ID,
-      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-      formRef.current,
-      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-    )
-      .then(() => {
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_KEY,
+          subject: `Portfolyo İletişim: ${formData.name}`,
+          from_name: formData.name,
+          email: formData.email,
+          message: formData.message
+        })
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
         setStatus('success');
         setFormData({ name: '', email: '', message: '' });
         setTimeout(() => setStatus('idle'), 5000);
-      })
-      .catch((error) => {
-        console.error('EmailJS Error:', error);
-        setStatus('error');
-        setTimeout(() => setStatus('idle'), 5000);
-      });
+      } else {
+        throw new Error(data.message);
+      }
+    } catch (error) {
+      console.error('Form Error:', error);
+      setStatus('error');
+      setTimeout(() => setStatus('idle'), 5000);
+    }
   };
 
   return (
@@ -81,7 +90,7 @@ function Contact() {
               </div>
             </div>
           </div>
-          <form ref={formRef} className="contact-form" onSubmit={handleSubmit}>
+          <form className="contact-form" onSubmit={handleSubmit}>
             <div className={`form-group ${isFocused.name ? 'focused' : ''}`}>
               <label htmlFor="name">İsim</label>
               <input
