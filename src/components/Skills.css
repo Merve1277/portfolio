@@ -159,6 +159,20 @@
   }
 }
 
+@media (max-width: 480px) {
+  .skills {
+    padding: 4rem 1rem;
+  }
+
+  .skill-card {
+    padding: 1rem 1.2rem;
+  }
+
+  .skill-name {
+    font-size: 0.9rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .skill-card {
     opacity: 1;
