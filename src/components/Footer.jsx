@@ -8,7 +8,7 @@ function Footer() {
       <div className="footer-content">
         <div className="footer-left">
           <div className="footer-logo">&lt;Merve /&gt;</div>
-          <p className="footer-tagline">Kod yazarak dünyayı değiştiriyorum. 💻</p>
+          <p className="footer-tagline">Kod yazarak dünyamı değiştiriyorum. 💻</p>
         </div>
         <div className="footer-center">
           <h4>Sosyal Medya</h4>

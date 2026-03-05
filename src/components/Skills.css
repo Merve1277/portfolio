@@ -17,7 +17,7 @@
   backdrop-filter: blur(10px);
   padding: 1.5rem 2rem;
   border-radius: 15px;
-  border: 1px solid rgba(102, 126, 234, 0.15);
+  border: 1px solid rgba(248, 87, 166, 0.15);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0;
   transform: translateY(20px);
@@ -81,9 +81,9 @@
 
 .skill-card:hover {
   transform: translateY(-5px) scale(1.02);
-  border-color: rgba(102, 126, 234, 0.4);
+  border-color: rgba(248, 87, 166, 0.4);
   box-shadow:
-    0 10px 40px rgba(102, 126, 234, 0.15),
+    0 10px 40px rgba(248, 87, 166, 0.15),
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
@@ -115,7 +115,7 @@
 
 .skill-bar {
   height: 6px;
-  background: rgba(102, 126, 234, 0.08);
+  background: rgba(248, 87, 166, 0.08);
   border-radius: 10px;
   overflow: hidden;
   position: relative;
