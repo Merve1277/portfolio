@@ -1,19 +1,18 @@
 import { useState, useEffect } from 'react';
+import { useLang } from '../i18n/LanguageContext';
 import './CodeTerminal.css';
 
 function CodeTerminal() {
+  const { t, lang } = useLang();
   const [text, setText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const codeLines = [
-    '$ npm install @merve/bilgisayar-muhendisi',
-    '✓ React + Node.js kuruldu',
-    '✓ Python + OpenCV kuruldu',
-    '✓ PostgreSQL + REST API kuruldu',
-    '✓ JWT kimlik doğrulama aktif',
-    '> Projeler derleniyor...',
-    '✨ Hazır! Kod yazmaya başlayalım!'
-  ];
+  const codeLines = t.terminal.lines;
+
+  useEffect(() => {
+    setText('');
+    setCurrentIndex(0);
+  }, [lang]);
 
   useEffect(() => {
     if (currentIndex < codeLines.length) {
@@ -23,7 +22,7 @@ function CodeTerminal() {
       }, 800);
       return () => clearTimeout(timeout);
     }
-  }, [currentIndex]);
+  }, [currentIndex, codeLines]);
 
   return (
     <div className="code-terminal">

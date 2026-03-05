@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
+import { useLang } from '../i18n/LanguageContext';
 import './Skills.css';
 
 function Skills() {
+  const { t } = useLang();
+
   const skills = [
     { name: 'Python', level: 85, icon: '🐍', color: '#3776ab' },
     { name: 'JavaScript', level: 85, icon: '⚡', color: '#f7df1e' },
@@ -39,7 +42,6 @@ function Skills() {
 
     const element = document.getElementById('skills');
     if (element) observer.observe(element);
-
     return () => observer.disconnect();
   }, []);
 
@@ -47,7 +49,7 @@ function Skills() {
     <section className="skills" id="skills">
       <div className="container">
         <h2 className="section-title">
-          <span className="title-number">03.</span> Yeteneklerim
+          <span className="title-number">03.</span> {t.skills.title}
         </h2>
         <div className="skills-grid">
           {skills.map((skill, index) => (
@@ -58,14 +60,7 @@ function Skills() {
                 <span className="skill-percentage">{animatedLevels[index]}%</span>
               </div>
               <div className="skill-bar">
-                <div
-                  className="skill-progress"
-                  style={{
-                    width: `${animatedLevels[index]}%`,
-                    background: skill.color,
-                    boxShadow: `0 0 20px ${skill.color}50`
-                  }}
-                ></div>
+                <div className="skill-progress" style={{ width: `${animatedLevels[index]}%`, background: skill.color, boxShadow: `0 0 20px ${skill.color}50` }}></div>
               </div>
             </div>
           ))}

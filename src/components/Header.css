@@ -41,6 +41,32 @@
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
 }
 
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.lang-toggle {
+  background: rgba(248, 87, 166, 0.1);
+  border: 1px solid rgba(248, 87, 166, 0.3);
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.lang-toggle:hover {
+  background: rgba(248, 87, 166, 0.2);
+  border-color: rgba(248, 87, 166, 0.5);
+  transform: translateY(-1px);
+}
+
 .logo {
   font-size: 1.8rem;
   font-weight: bold;
