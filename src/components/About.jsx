@@ -6,46 +6,47 @@ function About() {
     <section className="about" id="about">
       <div className="container">
         <h2 className="section-title">
-          <span className="title-number">01.</span> About
+          <span className="title-number">01.</span> Hakkımda
         </h2>
 
         <div className="about-content">
           <div className="about-text">
             <p className="intro">
-              Hi! I’m <strong>Merve Görgeç</strong> — a Computer Engineer who
-              loves building modern, clean, and user-friendly web applications.
+              Merhaba! Ben <strong>Merve Görgeç</strong> — İnönü Üniversitesi
+              Bilgisayar Mühendisliği mezunuyum (GPA: 3.27/4.00).
             </p>
 
             <p>
-              I work with <strong>React</strong> on the frontend and build
-              scalable APIs using <strong>Node.js</strong>, <strong>Express</strong>{" "}
-              and <strong>PostgreSQL</strong>. I enjoy turning ideas into
-              real-world products with solid architecture and a smooth UX.
+              <strong>Full Stack Web Geliştirme</strong> (React, Node.js, Express) ve
+              <strong> Python tabanlı görüntü işleme</strong> (OpenCV, GLCM, HoG, LBP)
+              alanlarında projeler geliştirdim. Analitik düşünme becerisine,
+              problem çözme yetkinliğine ve teknik öğrenmeye yüksek motivasyona sahibim.
             </p>
 
             <p>
-              I’m especially interested in <strong>Full Stack Web Development</strong>{" "}
-              and projects that combine <strong>performance</strong>,{" "}
-              <strong>security</strong> and <strong>clean code</strong>.
-              Learning new tools and improving my engineering mindset is a daily habit.
+              Malatya Büyükşehir Belediyesi Bilgi İşlem Dairesi'nde <strong>70 iş günü staj</strong> yaptım.
+              Burada donanım envanter yönetim sistemi geliştirme sürecinde yer aldım,
+              <strong> Node.js tabanlı REST API</strong> geliştirme ve <strong>React frontend</strong> entegrasyon
+              süreçlerinde aktif rol aldım.
             </p>
 
             <p>
-              Currently, I’m focusing on building stronger end-to-end projects,
-              improving my system design basics, and preparing a portfolio that
-              reflects real production skills.
+              Şu anda tam zamanlı pozisyonlara hazırlanıyor,
+              portföyümü güçlendiriyor ve yeni teknolojiler öğrenmeye devam ediyorum.
             </p>
 
-            {/* Mini highlights (çok yakışıyor) */}
             <ul className="about-highlights">
               <li>
-                <span className="hl-title">Focus:</span> Full Stack Web Development
+                <span className="hl-title">Eğitim:</span> Bilgisayar Mühendisliği — İnönü Üniversitesi (2021-2025)
               </li>
               <li>
-                <span className="hl-title">Stack:</span> React • Node.js • Express • PostgreSQL
+                <span className="hl-title">Staj:</span> Malatya Büyükşehir Belediyesi — Yazılım Destek Birimi
               </li>
               <li>
-                <span className="hl-title">Interests:</span> Web Dev • Backend • Data & AI
+                <span className="hl-title">Stack:</span> React • Node.js • Express • PostgreSQL • Python
+              </li>
+              <li>
+                <span className="hl-title">Sertifikalar:</span> GDSC Core Team • Frontend Workshop
               </li>
             </ul>
 
@@ -55,7 +56,7 @@ function About() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span className="github-icon">⚡</span> Visit my GitHub
+                <span className="github-icon">⚡</span> GitHub Profilim
               </a>
             </div>
           </div>

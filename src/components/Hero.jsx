@@ -74,16 +74,16 @@ function Hero() {
           </h1>
 
           <div className="hero-title">
-            Computer Engineer / Full Stack Developer
+            Bilgisayar Mühendisi / Full Stack Developer
           </div>
 
           <div className="hero-tagline">
-            Task-driven • Research-first • Clean delivery
+            Analitik Düşünce • Problem Çözme • Temiz Kod
           </div>
 
           <p className="hero-description">
-            Given a task → research → design → clean implementation.
-            I approach every project with thorough research to deliver the best solution.
+            İnönü Üniversitesi Bilgisayar Mühendisliği mezunuyum.
+            React, Node.js ve Python ile projeler geliştiriyorum.
           </p>
 
           {/* Code Snippet Box */}
@@ -97,10 +97,10 @@ function Hero() {
               <code>
                 <span className="keyword">const</span> <span className="variable">merve</span> = &#123;<br />
                 &nbsp;&nbsp;<span className="property">role</span>: <span className="string">"Full Stack Developer"</span>,<br />
-                &nbsp;&nbsp;<span className="property">stack</span>: <span className="string">"React, Node.js, PostgreSQL, Docker"</span>,<br />
-                &nbsp;&nbsp;<span className="property">project</span>: <span className="string">"Hardware Inventory System"</span>,<br />
-                &nbsp;&nbsp;<span className="property">extras</span>: <span className="string">"Python • OpenCV • HoG/LBP/GLCM"</span>,<br />
-                &nbsp;&nbsp;<span className="property">mindset</span>: <span className="string">"Research → Design → Clean Code"</span><br />
+                &nbsp;&nbsp;<span className="property">stack</span>: <span className="string">"React, Node.js, Express, PostgreSQL"</span>,<br />
+                &nbsp;&nbsp;<span className="property">proje</span>: <span className="string">"Donanım Envanter Sistemi"</span>,<br />
+                &nbsp;&nbsp;<span className="property">ekstra</span>: <span className="string">"Python • OpenCV • GLCM/HoG/LBP"</span>,<br />
+                &nbsp;&nbsp;<span className="property">yaklaşım</span>: <span className="string">"Araştır → Tasarla → Temiz Kod"</span><br />
                 &#125;;
               </code>
             </div>
@@ -143,11 +143,11 @@ function Hero() {
               <div className="card-badges">
                 <div className="badge">
                   <span className="badge-icon">💼</span>
-                  <span className="badge-text">Intern @ Malatya Metropolitan Municipality (IT)</span>
+                  <span className="badge-text">Stajyer @ Malatya Büyükşehir Belediyesi (Bilgi İşlem)</span>
                 </div>
                 <div className="badge">
                   <span className="badge-icon">📊</span>
-                  <span className="badge-text">ALES Quant: 83</span>
+                  <span className="badge-text">ALES Sayısal: 83</span>
                 </div>
                 <div className="badge">
                   <span className="badge-icon">🎓</span>
@@ -158,10 +158,10 @@ function Hero() {
               <div className="card-tech-grid">
                 <span className="tech-item">React</span>
                 <span className="tech-item">Node.js</span>
-                <span className="tech-item">TypeScript</span>
-                <span className="tech-item">PostgreSQL</span>
-                <span className="tech-item">Docker</span>
                 <span className="tech-item">Python</span>
+                <span className="tech-item">PostgreSQL</span>
+                <span className="tech-item">OpenCV</span>
+                <span className="tech-item">Express</span>
               </div>
             </div>
           </div>

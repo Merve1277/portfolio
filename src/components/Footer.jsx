@@ -16,7 +16,7 @@ function Footer() {
             <a href="https://github.com/Merve1277" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="GitHub profilini ziyaret et" role="listitem">
               <span>GitHub</span>
             </a>
-            <a href="https://linkedin.com/in/merve-gorgec" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="LinkedIn profilini ziyaret et" role="listitem">
+            <a href="https://linkedin.com/in/mervegorgeç7" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="LinkedIn profilini ziyaret et" role="listitem">
               <span>LinkedIn</span>
             </a>
             <a href="mailto:mgor29372@gmail.com" className="social-link" aria-label="Email gönder" role="listitem">

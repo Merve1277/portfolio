@@ -4,15 +4,15 @@ import './CodeTerminal.css';
 function CodeTerminal() {
   const [text, setText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
-  
+
   const codeLines = [
-    '$ npm install @merve/awesome-skills',
-    '✓ JavaScript installed',
-    '✓ React installed',
-    '✓ Node.js installed',
-    '✓ Problem-solving installed',
-    '> Building amazing projects...',
-    '✨ Ready to code!'
+    '$ npm install @merve/bilgisayar-muhendisi',
+    '✓ React + Node.js kuruldu',
+    '✓ Python + OpenCV kuruldu',
+    '✓ PostgreSQL + REST API kuruldu',
+    '✓ JWT kimlik doğrulama aktif',
+    '> Projeler derleniyor...',
+    '✨ Hazır! Kod yazmaya başlayalım!'
   ];
 
   useEffect(() => {
