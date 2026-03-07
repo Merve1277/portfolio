@@ -30,7 +30,7 @@ const translations = {
             title: 'Hakkımda',
             subtitle: 'Kısaca ben kimim?',
             p1: 'İnönü Üniversitesi Bilgisayar Mühendisliği mezunuyum. Stajımda Malatya Büyükşehir Belediyesi\'nde 70 iş günü boyunca donanım envanter sistemi geliştirdim — React, Node.js, PostgreSQL üçlüsüyle tanıştım ve ayrılmak istemedim. Python ile röntgen görüntülerinden doku analizi projemi de tamamladım, çünkü neden olmasın? 🤷‍♀️',
-            p2: 'GDSC Core Team\'de frontend workshop\'ları verdim, ALES\'te 83 sayısal aldım (matematik seviyorum, o da beni seviyor 💜), ve 3.27 GPA ile mezun oldum. Şu an bu portfolyöyü yaparken bile "bir tane daha özellik ekleyeyim" diye kendimi durduramıyorum. Spoiler: durduramadım. 😅',
+            p2: 'GDSC Core Team\'de frontend workshop\'ları verdim, ALES\'te 83 sayısal aldım, ve 3.27 GPA ile mezun oldum. Şu an bu portfolyöyü yaparken bile "bir tane daha özellik ekleyeyim" diye kendimi durduramıyorum. Spoiler: durduramadım. 😅',
             locationLabel: 'Konum',
             locationVal: 'Malatya, Türkiye',
             focusLabel: 'Odak',
