@@ -3,14 +3,12 @@ import { useLang } from '../i18n/LanguageContext';
 import './Header.css';
 
 function Header() {
-  const { lang, t, toggleLang } = useLang();
+  const { lang, t, setLang } = useLang();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -35,14 +33,24 @@ function Header() {
         <div className="logo" aria-label="Merve Görgeç Logo">&lt;Merve /&gt;</div>
 
         <div className="header-right">
-          <button
-            className="lang-toggle"
-            onClick={toggleLang}
-            aria-label={lang === 'tr' ? 'Switch to English' : 'Türkçeye geç'}
-            title={lang === 'tr' ? 'English' : 'Türkçe'}
-          >
-            {lang === 'tr' ? '🇬🇧 EN' : '🇹🇷 TR'}
-          </button>
+          {/* EN / TR Capsule */}
+          <div className="lang-capsule" role="radiogroup" aria-label="Language">
+            <button
+              className={`lang-btn ${lang === 'en' ? 'active' : ''}`}
+              onClick={() => setLang('en')}
+              aria-label="English"
+            >
+              EN
+            </button>
+            <span className="lang-divider">/</span>
+            <button
+              className={`lang-btn ${lang === 'tr' ? 'active' : ''}`}
+              onClick={() => setLang('tr')}
+              aria-label="Türkçe"
+            >
+              TR
+            </button>
+          </div>
 
           <button
             className={`hamburger ${menuOpen ? 'active' : ''}`}
@@ -58,11 +66,11 @@ function Header() {
 
         {menuOpen && <div className="nav-overlay" onClick={() => setMenuOpen(false)} />}
 
-        <nav className={`nav ${menuOpen ? 'open' : ''}`} role="navigation" aria-label="Ana Navigasyon">
-          <button onClick={() => scrollToSection('hero')}>{t.nav.home}</button>
+        <nav className={`nav ${menuOpen ? 'open' : ''}`} role="navigation">
           <button onClick={() => scrollToSection('about')}>{t.nav.about}</button>
-          <button onClick={() => scrollToSection('projects')}>{t.nav.projects}</button>
           <button onClick={() => scrollToSection('skills')}>{t.nav.skills}</button>
+          <button onClick={() => scrollToSection('projects')}>{t.nav.projects}</button>
+          <button onClick={() => scrollToSection('education')}>{t.nav.education || 'Eğitim'}</button>
           <button onClick={() => scrollToSection('contact')}>{t.nav.contact}</button>
         </nav>
       </header>

@@ -9,15 +9,16 @@ main {
   overflow-x: hidden;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+}
+
+/* Section spacing */
+section {
+  padding: 8rem 0;
+  position: relative;
+  z-index: 1;
 }
 
 /* Section reveal animation */
@@ -35,20 +36,20 @@ html {
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a0a1a;
+  background: #050505;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #f857a6 0%, #a855f7 100%);
-  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #a855f7 0%, #00d2ff 100%);
+  background: rgba(255, 255, 255, 0.2);
 }
 
 /* Reduced motion support */

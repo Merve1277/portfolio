@@ -4,7 +4,7 @@ import translations from './translations';
 const LanguageContext = createContext();
 
 export function LanguageProvider({ children }) {
-    const [lang, setLang] = useState(() => {
+    const [lang, setLangState] = useState(() => {
         return localStorage.getItem('portfolio-lang') || 'tr';
     });
 
@@ -15,12 +15,16 @@ export function LanguageProvider({ children }) {
 
     const t = translations[lang];
 
+    const setLang = (newLang) => {
+        setLangState(newLang);
+    };
+
     const toggleLang = () => {
-        setLang(prev => (prev === 'tr' ? 'en' : 'tr'));
+        setLangState(prev => (prev === 'tr' ? 'en' : 'tr'));
     };
 
     return (
-        <LanguageContext.Provider value={{ lang, t, toggleLang }}>
+        <LanguageContext.Provider value={{ lang, t, setLang, toggleLang }}>
             {children}
         </LanguageContext.Provider>
     );

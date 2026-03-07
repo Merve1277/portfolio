@@ -4,103 +4,78 @@ import './Contact.css';
 
 function Contact() {
   const { t } = useLang();
-
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [isFocused, setIsFocused] = useState({ name: false, email: false, message: false });
   const [status, setStatus] = useState('idle');
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('sending');
-
     try {
-      const res = await fetch('https://api.web3forms.com/submit', {
+      const res = await fetch(`https://formspree.io/f/${import.meta.env.VITE_FORMSPREE_FORM_ID}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          access_key: import.meta.env.VITE_WEB3FORMS_KEY,
-          subject: `Portfolyo İletişim: ${formData.name}`,
-          from_name: formData.name,
-          email: formData.email,
-          message: formData.message,
-        }),
+        body: JSON.stringify(formData),
       });
-
-      const data = await res.json();
-
-      if (data.success) {
+      if (res.ok) {
         setStatus('success');
         setFormData({ name: '', email: '', message: '' });
         setTimeout(() => setStatus('idle'), 5000);
-      } else {
-        throw new Error(data.message);
-      }
-    } catch (error) {
-      console.error('Form Error:', error);
+      } else throw new Error();
+    } catch {
       setStatus('error');
       setTimeout(() => setStatus('idle'), 5000);
     }
   };
 
+  const links = [
+    { icon: '⌘', label: 'GitHub', href: 'https://github.com/Merve1277' },
+    { icon: '↗', label: 'LinkedIn', href: 'https://linkedin.com/in/mervegorgeç7' },
+    { icon: '✉', label: 'mgor29372@gmail.com', href: 'mailto:mgor29372@gmail.com' },
+  ];
+
   return (
     <section className="contact" id="contact">
       <div className="container">
-        <h2 className="section-title">
-          <span className="title-number">04.</span> {t.contact.title}
-        </h2>
-        <div className="contact-content">
+        <h2 className="section-title">{t.contact.title}</h2>
+        <p className="section-subtitle">{t.contact.subtitle}</p>
+
+        <div className="contact-grid">
+          {/* Left - info + links */}
           <div className="contact-info">
-            <h3>{t.contact.subtitle}</h3>
-            <p>{t.contact.description}</p>
-            <div className="contact-methods">
-              <div className="contact-method">
-                <span className="method-icon">📧</span>
-                <div>
-                  <h4>{t.contact.methodEmail}</h4>
-                  <p>mgor29372@gmail.com</p>
-                </div>
-              </div>
-              <div className="contact-method">
-                <span className="method-icon">💼</span>
-                <div>
-                  <h4>{t.contact.methodGitHub}</h4>
-                  <p>@Merve1277</p>
-                </div>
-              </div>
-              <div className="contact-method">
-                <span className="method-icon">📍</span>
-                <div>
-                  <h4>{t.contact.methodLocation}</h4>
-                  <p>{t.contact.locationValue}</p>
-                </div>
-              </div>
+            <p className="contact-text">{t.contact.description}</p>
+            <div className="contact-links">
+              {links.map((link) => (
+                <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="glass-card contact-link">
+                  <span className="contact-link-icon">{link.icon}</span>
+                  <span className="contact-link-label">{link.label}</span>
+                  <span className="contact-link-arrow">→</span>
+                </a>
+              ))}
             </div>
           </div>
+
+          {/* Right - form */}
           <form className="contact-form" onSubmit={handleSubmit}>
-            <div className={`form-group ${isFocused.name ? 'focused' : ''}`}>
-              <label htmlFor="name">{t.contact.labelName}</label>
-              <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} onFocus={() => setIsFocused({ ...isFocused, name: true })} onBlur={() => setIsFocused({ ...isFocused, name: false })} required disabled={status === 'sending'} />
+            <div className="form-group">
+              <label htmlFor="name">{t.contact.labelName || 'İsim'}</label>
+              <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required disabled={status === 'sending'} />
             </div>
-            <div className={`form-group ${isFocused.email ? 'focused' : ''}`}>
-              <label htmlFor="email">{t.contact.labelEmail}</label>
-              <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} onFocus={() => setIsFocused({ ...isFocused, email: true })} onBlur={() => setIsFocused({ ...isFocused, email: false })} required disabled={status === 'sending'} />
+            <div className="form-group">
+              <label htmlFor="email">{t.contact.labelEmail || 'Email'}</label>
+              <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required disabled={status === 'sending'} />
             </div>
-            <div className={`form-group ${isFocused.message ? 'focused' : ''}`}>
-              <label htmlFor="message">{t.contact.labelMessage}</label>
-              <textarea id="message" name="message" value={formData.message} onChange={handleChange} onFocus={() => setIsFocused({ ...isFocused, message: true })} onBlur={() => setIsFocused({ ...isFocused, message: false })} rows="5" required disabled={status === 'sending'}></textarea>
+            <div className="form-group">
+              <label htmlFor="message">{t.contact.labelMessage || 'Mesaj'}</label>
+              <textarea id="message" name="message" value={formData.message} onChange={handleChange} rows="4" required disabled={status === 'sending'}></textarea>
             </div>
-            <button type="submit" className={`submit-btn ${status}`} aria-label={t.contact.btnSend} disabled={status === 'sending'}>
-              {status === 'sending' && t.contact.btnSending}
-              {status === 'success' && t.contact.btnSuccess}
-              {status === 'error' && t.contact.btnError}
-              {status === 'idle' && (<>{t.contact.btnSend}<span className="btn-arrow" aria-hidden="true">→</span></>)}
+            <button type="submit" className={`btn-primary submit-btn ${status}`} disabled={status === 'sending'}>
+              {status === 'sending' ? (t.contact.btnSending || 'Gönderiliyor...') :
+                status === 'success' ? (t.contact.btnSuccess || '✓ Gönderildi!') :
+                  status === 'error' ? (t.contact.btnError || '✕ Hata') :
+                    (t.contact.btnSend || 'Gönder →')}
             </button>
-            {status === 'success' && <p className="form-feedback success">{t.contact.feedbackSuccess}</p>}
-            {status === 'error' && <p className="form-feedback error">{t.contact.feedbackError}</p>}
           </form>
         </div>
       </div>

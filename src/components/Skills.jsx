@@ -16,8 +16,8 @@ function Skills() {
     { name: 'HTML/CSS', level: 90, icon: '🎨', color: '#e34c26' },
     { name: 'Git', level: 82, icon: '📦', color: '#f05032' },
     { name: 'OpenCV', level: 75, icon: '👁️', color: '#5c3ee8' },
-    { name: 'REST API', level: 80, icon: '🔌', color: '#00d2ff' },
-    { name: 'JWT Auth', level: 75, icon: '🔐', color: '#fb015b' },
+    { name: 'REST API', level: 80, icon: '🔌', color: '#00d1ff' },
+    { name: 'JWT Auth', level: 75, icon: '🔐', color: '#f857a6' },
   ];
 
   const [animatedLevels, setAnimatedLevels] = useState(skills.map(() => 0));
@@ -33,11 +33,11 @@ function Skills() {
                 newLevels[index] = skill.level;
                 return newLevels;
               });
-            }, index * 100);
+            }, index * 80);
           });
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.3 }
     );
 
     const element = document.getElementById('skills');
@@ -48,19 +48,25 @@ function Skills() {
   return (
     <section className="skills" id="skills">
       <div className="container">
-        <h2 className="section-title">
-          <span className="title-number">03.</span> {t.skills.title}
-        </h2>
+        <h2 className="section-title">{t.skills.title}</h2>
+        <p className="section-subtitle">{t.skills.subtitle || ''}</p>
         <div className="skills-grid">
           {skills.map((skill, index) => (
-            <div key={skill.name} className="skill-card">
+            <div key={skill.name} className="glass-card skill-card">
               <div className="skill-header">
                 <span className="skill-icon">{skill.icon}</span>
                 <span className="skill-name">{skill.name}</span>
-                <span className="skill-percentage">{animatedLevels[index]}%</span>
+                <span className="skill-pct">{animatedLevels[index]}%</span>
               </div>
               <div className="skill-bar">
-                <div className="skill-progress" style={{ width: `${animatedLevels[index]}%`, background: skill.color, boxShadow: `0 0 20px ${skill.color}50` }}></div>
+                <div
+                  className="skill-fill"
+                  style={{
+                    width: `${animatedLevels[index]}%`,
+                    background: `linear-gradient(90deg, ${skill.color}, ${skill.color}88)`,
+                    boxShadow: `0 0 12px ${skill.color}40`
+                  }}
+                ></div>
               </div>
             </div>
           ))}

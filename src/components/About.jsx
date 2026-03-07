@@ -1,6 +1,5 @@
 import { useLang } from '../i18n/LanguageContext';
-import CodeTerminal from "./CodeTerminal";
-import "./About.css";
+import './About.css';
 
 function About() {
   const { t } = useLang();
@@ -8,33 +7,34 @@ function About() {
   return (
     <section className="about" id="about">
       <div className="container">
-        <h2 className="section-title">
-          <span className="title-number">01.</span> {t.about.title}
-        </h2>
+        <h2 className="section-title">{t.about.title}</h2>
+        <p className="section-subtitle">{t.about.subtitle || ''}</p>
 
-        <div className="about-content">
-          <div className="about-text">
-            <p className="intro">{t.about.intro}</p>
-            <p>{t.about.p1}</p>
-            <p>{t.about.p2}</p>
-            <p>{t.about.p3}</p>
+        <div className="about-text">
+          <p>{t.about.p1}</p>
+          <p>{t.about.p2}</p>
+        </div>
 
-            <ul className="about-highlights">
-              <li><span className="hl-title">{t.about.hlEducation}</span> {t.about.hlEducationVal}</li>
-              <li><span className="hl-title">{t.about.hlIntern}</span> {t.about.hlInternVal}</li>
-              <li><span className="hl-title">{t.about.hlStack}</span> {t.about.hlStackVal}</li>
-              <li><span className="hl-title">{t.about.hlCerts}</span> {t.about.hlCertsVal}</li>
-            </ul>
-
-            <div className="github-link">
-              <a href="https://github.com/Merve1277" target="_blank" rel="noopener noreferrer">
-                <span className="github-icon">⚡</span> {t.about.github}
-              </a>
-            </div>
+        <div className="about-grid">
+          <div className="glass-card about-card">
+            <span className="about-card-icon">📍</span>
+            <span className="about-card-label">{t.about.locationLabel || 'Konum'}</span>
+            <span className="about-card-value">{t.about.locationVal || 'Malatya, Türkiye'}</span>
           </div>
-
-          <div className="about-terminal">
-            <CodeTerminal />
+          <div className="glass-card about-card">
+            <span className="about-card-icon">🎯</span>
+            <span className="about-card-label">{t.about.focusLabel || 'Odak'}</span>
+            <span className="about-card-value">{t.about.focusVal || 'Full Stack'}</span>
+          </div>
+          <div className="glass-card about-card">
+            <span className="about-card-icon">🎓</span>
+            <span className="about-card-label">{t.about.gpaLabel || 'GPA'}</span>
+            <span className="about-card-value">3.27 / 4.00</span>
+          </div>
+          <div className="glass-card about-card">
+            <span className="about-card-icon">📊</span>
+            <span className="about-card-label">{t.about.alesLabel || 'ALES'}</span>
+            <span className="about-card-value">{t.about.alesVal || 'Sayısal: 83'}</span>
           </div>
         </div>
       </div>
