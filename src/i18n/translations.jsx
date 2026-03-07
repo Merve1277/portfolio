@@ -29,8 +29,8 @@ const translations = {
         about: {
             title: 'Hakkımda',
             subtitle: 'Kısaca ben kimim?',
-            p1: 'Bilgisayar mühendisi olarak hem ön yüzde tasarım takıntısı yapıyor, hem arka planda veritabanlarıyla güreşiyorum. React ile piksel peşinde koşuyor, Node.js ile API\'ler inşa ediyorum.',
-            p2: 'Kod yazmadığım zamanlarda yeni teknolojilerin peşinde koşuyor, portfolyömü güçlendiriyor ve "bu sefer gerçekten bitireceğim" dediğim yan projelere dalıyorum.',
+            p1: 'İnönü Üniversitesi Bilgisayar Mühendisliği mezunuyum. Stajımda Malatya Büyükşehir Belediyesi\'nde 70 iş günü boyunca donanım envanter sistemi geliştirdim — React, Node.js, PostgreSQL üçlüsüyle tanıştım ve ayrılmak istemedim. Bir yandan da Python ile röntgen görüntülerinden doku analizi yapıyorum çünkü neden olmasın? 🤷‍♀️',
+            p2: 'GDSC Core Team\'de frontend workshop\'ları verdim, ALES\'te 83 sayısal aldım (matematik seviyorum ama o beni sevmiyor), ve 3.27 GPA ile mezun oldum. Şu an bu portfolyöyü yaparken bile "bir tane daha özellik ekleyeyim" diye kendimi durduramıyorum. Spoiler: durduramadım. 😅',
             locationLabel: 'Konum',
             locationVal: 'Malatya, Türkiye',
             focusLabel: 'Odak',
@@ -133,8 +133,8 @@ const translations = {
         about: {
             title: 'About Me',
             subtitle: 'Who am I, briefly?',
-            p1: "As a computer engineer, I'm obsessed with pixel-perfect designs on the frontend while wrestling with databases on the backend. I chase pixels with React and build APIs with Node.js.",
-            p2: 'When I\'m not coding, I\'m chasing new technologies, strengthening my portfolio, and diving into side projects I always say "I\'ll definitely finish this time."',
+            p1: "Computer Engineering graduate from İnönü University. During my 70-day internship at Malatya Municipality, I built a hardware inventory system with React, Node.js & PostgreSQL — fell in love with the stack and never looked back. I also do texture analysis on X-ray images with Python because... why not? 🤷‍♀️",
+            p2: 'Gave frontend workshops as a GDSC Core Team member, scored 83 on ALES (I love math but math doesn\'t love me back), and graduated with a 3.27 GPA. Currently building this portfolio while telling myself "just one more feature." Spoiler: I couldn\'t stop. 😅',
             locationLabel: 'Location',
             locationVal: 'Malatya, Turkey',
             focusLabel: 'Focus',
