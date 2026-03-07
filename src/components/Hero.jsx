@@ -43,9 +43,8 @@ function Hero() {
             {t.hero.greeting}
           </div>
 
-          <h1 className="hero-name">
-            <span className="hero-name-gradient">Merve</span>
-            <br />Görgeç
+          <h1 className="hero-name hero-name-gradient">
+            Merve<br />Görgeç
           </h1>
 
           <p className="hero-title">{t.hero.title}</p>
