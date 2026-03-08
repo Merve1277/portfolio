@@ -87,7 +87,7 @@ const translations = {
                     title: 'Fen Bilimleri — Lise',
                     institution: 'Özel Malatya Kanguru Fen ve Teknoloji Lisesi',
                     period: '2016 — 2020',
-                    desc: 'Her şeyin başladığı yer. 95.09 diploma puanıyla mezun oldum ve bilgisayara olan tutkum burada şekillendi.',
+                    desc: 'Her şeyin başladığı yer. 95.09 diploma puanıyla mezun oldum ve bilgisayara olan yolculuğum burada şekillendi.',
                 },
             ],
         },

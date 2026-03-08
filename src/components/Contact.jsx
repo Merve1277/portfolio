@@ -67,8 +67,8 @@ function Contact() {
               <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required disabled={status === 'sending'} />
             </div>
             <div className="form-group">
-              <label htmlFor="message">{t.contact.labelMessage || 'Mesaj'}</label>
-              <textarea id="message" name="message" value={formData.message} onChange={handleChange} rows="4" required disabled={status === 'sending'}></textarea>
+              <label htmlFor="message">{t.contact.labelMessage || 'Mesaj'} <span className="char-count">{formData.message.length}/500</span></label>
+              <textarea id="message" name="message" value={formData.message} onChange={handleChange} rows="4" required maxLength={500} disabled={status === 'sending'}></textarea>
             </div>
             <button type="submit" className={`btn-primary submit-btn ${status}`} disabled={status === 'sending'}>
               {status === 'sending' ? (t.contact.btnSending || 'Gönderiliyor...') :
